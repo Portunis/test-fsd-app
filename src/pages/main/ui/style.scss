@@ -1,0 +1,22 @@
+@import "../../../app/styles/mixins";
+.main-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
+  background: #1c1e21;
+  &__title {
+    color: #fff;
+    text-align: center;
+    font-size: 36px;
+    @include fontChakra600;
+    margin: 0;
+  }
+  &__subtext {
+    color: #fff;
+    text-align: center;
+    font-size: 24px;
+    @include fontChakra600;
+  }
+}

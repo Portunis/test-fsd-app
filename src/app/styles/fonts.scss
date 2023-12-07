@@ -1,0 +1,30 @@
+/* chakra-petch-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Chakra Petch';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Chakra Petch'),
+  url('../../../public/fonts/chakra-petch-v9-latin/chakra-petch-v9-latin-regular.woff2') format('woff2'),
+  url('../../../public/fonts/chakra-petch-v9-latin/chakra-petch-v9-latin-regular.woff') format('woff');
+}
+/* chakra-petch-600 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Chakra Petch';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Chakra Petch'),
+  url('../../../public/fonts/chakra-petch-v9-latin/chakra-petch-v9-latin-600.woff2') format('woff2'),
+  url('../../../public/fonts/chakra-petch-v9-latin/chakra-petch-v9-latin-600.woff') format('woff');
+}
+/* chakra-petch-700 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Chakra Petch';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Chakra Petch'),
+  url('../../../public/fonts/chakra-petch-v9-latin/chakra-petch-v9-latin-700.woff2') format('woff2'),
+  url('../../../public/fonts/chakra-petch-v9-latin/chakra-petch-v9-latin-700.woff') format('woff');
+}
