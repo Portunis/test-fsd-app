@@ -13,6 +13,7 @@
   }
 }
 .text {
+  user-select: none;
   z-index: 1;
   position: absolute;
   text-transform: uppercase;
@@ -24,7 +25,6 @@
   width: 900px;
   padding: 5px;
   max-height: 700px;
-  box-sizing: border-box;
   word-wrap: break-word;
   overflow-y: scroll;
   transition: 2s;

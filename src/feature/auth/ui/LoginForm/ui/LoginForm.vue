@@ -3,7 +3,7 @@ import { UiInput } from "../../../../../shared/Ui/input";
 import { UiButton } from "../../../../../shared/Ui/button";
 import { ref } from "vue";
 
-const text = ref<string>("text ;)");
+const text = ref<string>("system fsd active...");
 
 const optionsInput = {
   label: "",
