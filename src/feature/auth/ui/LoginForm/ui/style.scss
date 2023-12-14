@@ -1,9 +1,57 @@
 .login-form {
+  position: relative;
   width: 300px;
+  height: auto;
+  max-height: 600px;
+  transition: 2s;
+  z-index: 2;
   &__input {
     margin-bottom: 10px;
   }
   &__button {
     margin-bottom: 10px;
   }
+}
+.text {
+  z-index: 1;
+  position: absolute;
+  text-transform: uppercase;
+  top: 20%;
+  left: 30%;
+  color: #fff;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 24px;
+  width: 900px;
+  padding: 5px;
+  max-height: 700px;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-y: scroll;
+  transition: 2s;
+  opacity: 0.3;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+  &:after {
+    content: "|";
+    color: #fff;
+    animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    animation-duration: 1s;
+    -webkit-animation-name: blinker;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+    -webkit-animation-duration: 1s;
+  }
+}
+
+@keyframes blinker {
+  from { opacity: 1.0; }
+  to { opacity: 0.0; }
+}
+
+@-webkit-keyframes blinker {
+  from { opacity: 1.0; }
+  to { opacity: 0.0; }
 }

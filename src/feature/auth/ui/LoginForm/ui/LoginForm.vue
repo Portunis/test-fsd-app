@@ -3,7 +3,7 @@ import { UiInput } from "../../../../../shared/Ui/input";
 import { UiButton } from "../../../../../shared/Ui/button";
 import { ref } from "vue";
 
-const text = ref<string>("");
+const text = ref<string>("text ;)");
 
 const optionsInput = {
   label: "",
@@ -13,13 +13,10 @@ const optionsInput = {
 </script>
 
 <template>
+  <p class="text" v-if="text">{{ text }}</p>
   <div class="login-form">
     <form>
-      <ui-input
-        class="login-form__input"
-        :data="optionsInput"
-        :modelValue="text"
-      />
+      <ui-input class="login-form__input" :data="optionsInput" v-model="text" />
       <ui-button class="login-form__button" text="Good App" />
       <router-link to="/ui-kit">
         <ui-button class="login-form__button" text="Go to UI-KIT" />
