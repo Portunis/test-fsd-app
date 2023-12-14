@@ -1,11 +1,11 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
-<div>dasdsa</div>
+  <div class="ui-kit">
+    UI-KIT PAGE
+  </div>
 </template>
 
-<style scoped>
-
+<style scoped lang="scss">
+@import "style";
 </style>

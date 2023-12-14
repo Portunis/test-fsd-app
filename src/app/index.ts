@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import {router} from "./provides";
+import {router, store} from "./provides";
 import './styles/index.scss'
-export const application = createApp(App).use(router)
+export const application = createApp(App).use(router).use(store)
