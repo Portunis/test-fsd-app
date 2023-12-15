@@ -1,0 +1,13 @@
+.chat {
+  background: #1c1e21;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  &__text--warning {
+    color: #fff;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 24px;
+  }
+}

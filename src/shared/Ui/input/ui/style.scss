@@ -1,5 +1,9 @@
 @import "src/app/styles/mixins";
 .ui-input {
+  width: 100%;
+  &__container {
+    width: 100%;
+  }
   &__label {
     font-size: 18px;
     color: #fff;

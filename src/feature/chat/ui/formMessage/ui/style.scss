@@ -1,0 +1,72 @@
+.form-message {
+  &__container {
+    border-radius: 8px;
+    border: 1px solid #fff;
+    height: 700px;
+    width: 600px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+  &__form {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 10px;
+    width: 620px;
+  }
+  &__form-button {
+    width: 100px;
+  }
+}
+.chat-message {
+  display: flex;
+  justify-content: flex-end;
+  &__time {
+    color: #000;
+    font-size: 12px;
+    font-family: 'Chakra Petch', sans-serif;
+    margin-top: 5px;
+  }
+  &__text {
+    transition: ease-in-out 1s;
+    padding: 5px 10px;
+    color: #000;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Chakra Petch', sans-serif;
+    background: #fff;
+    margin: 10px 0;
+    background-size: 100% 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+  }
+}
+.chat-message--not-personal {
+  justify-content: flex-start;
+  .chat-message__text {
+    align-items: flex-start;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .form-message {
+    &__container {
+      height: 400px;
+    }
+  }
+}
+@media screen and (max-width: 1400px){
+  .form-message {
+    &__container {
+      height: 400px;
+    }
+  }
+}

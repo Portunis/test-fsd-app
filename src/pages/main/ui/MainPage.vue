@@ -5,7 +5,7 @@ import { LoginForm } from "../../../feature/auth";
 <template>
   <div class="main-page">
     <h2 class="main-page__title">It,s main page :) FSD</h2>
-    <p class="main-page__subtext">Stack: vite/vue3/pinia/router</p>
+    <p class="main-page__subtext">Stack: vite/vue3/pinia/router/supabase</p>
     <LoginForm />
   </div>
 </template>
