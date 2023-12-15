@@ -1,15 +1,16 @@
 import { defineStore } from "pinia";
 import { supabase } from "../index";
+import { IMessage } from "../../../entities/Chat/model";
 
 export const useChatStore = defineStore("chatStore", {
   state: () => ({
-    messages: [],
+    messages: [] as IMessage[],
   }),
   getters: {
     messageList: (state) => state.messages,
   },
   actions: {
-    async getMessages(from, to) {
+    async getMessages(from: number, to: number): Promise<IMessage[] | null> {
       const { data } = await supabase
         .from("messages")
         .select()
@@ -17,7 +18,7 @@ export const useChatStore = defineStore("chatStore", {
         .order("timestamp", { ascending: false });
       return data;
     },
-    async onNewMessage(handler) {
+    async onNewMessage(handler: any): Promise<void> {
       supabase
         .channel("*")
         .on("postgres_changes", { event: "*", schema: "*" }, (payload) => {
@@ -25,7 +26,10 @@ export const useChatStore = defineStore("chatStore", {
         })
         .subscribe();
     },
-    async createNewMessage(user_id, text) {
+    async createNewMessage(
+      user_id: string,
+      text: string,
+    ): Promise<IMessage | null> {
       const { data } = await supabase
         .from("messages")
         .insert({ user_id, text });

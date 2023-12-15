@@ -1,41 +1,10 @@
 <script setup lang="ts">
 import { UiButton } from "../../../../../shared/Ui/button";
 import { UiInput } from "../../../../../shared/Ui/input";
-import { onMounted, ref } from "vue";
-import { useChatStore } from "../../../../../shared/api/chat/useChatStore";
-import { useAuthStore } from "../../../../../shared/api/auth/useAuthStore";
+import useController from "../../../../../entities/Chat/model/controllers/useController.ts";
 import moment from "moment";
-
-const chat = useChatStore();
-const auth = useAuthStore();
-const options = {
-  label: "",
-  placeholder: "Ваше сообщение",
-  type: "text",
-};
-const userId = ref("");
-const message = ref("");
-const messages = ref([]);
-const messagesCount = ref(0);
-const maxMessagesPerRequest = 50;
-const loadMessagesBatch = async () => {
-  const loadedMessages = await chat.getMessages(
-    messagesCount.value,
-    maxMessagesPerRequest - 1,
-  );
-
-  messages.value = [...loadedMessages, ...messages.value];
-  messagesCount.value += loadedMessages.length;
-};
-onMounted(async () => {
-  userId.value = await auth.sessionData.user.id;
-  messages.value = await chat.getMessages();
-  await loadMessagesBatch();
-  await chat.onNewMessage((newMessage) => {
-    messages.value = [newMessage, ...messages.value];
-    messagesCount.value += 1;
-  });
-});
+const { messages, userId, createNewMessage, message, options } =
+  useController();
 </script>
 
 <template>
@@ -57,15 +26,12 @@ onMounted(async () => {
     </div>
     <div class="form-message__form">
       <ui-input
-        @keyup.enter="chat.createNewMessage(userId, message), (message = '')"
+        @keyup.enter="createNewMessage"
         :data="options"
         v-model="message"
       />
       <div class="form-message__form-button">
-        <ui-button
-          text="Отправить"
-          @click="chat.createNewMessage(userId, message), (message = '')"
-        />
+        <ui-button text="Отправить" @click="createNewMessage" />
       </div>
     </div>
   </div>
