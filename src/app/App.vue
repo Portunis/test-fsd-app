@@ -2,10 +2,9 @@
 import { useAuthStore } from "./../shared/api/auth/useAuthStore.ts";
 import {onMounted, ref} from "vue";
 const auth = useAuthStore()
-const userId = ref('')
+const userId = ref('123')
 onMounted(async () => {
   await auth.getSession();
-  userId.value = await auth.sessionData?.user?.id;
 });
 </script>
 

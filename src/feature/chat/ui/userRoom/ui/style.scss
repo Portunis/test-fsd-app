@@ -1,0 +1,50 @@
+.user-room {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 20px;
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px;
+    background: #fff;
+    user-select: none;
+    border-radius: 8px;
+    width: 350px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: all .2s ease-in-out;
+    &:hover {
+      background: #4d47c3;
+      .user-room__message-count {
+        background: #fff;
+        color: #4d47c3;
+      }
+    }
+  }
+  &__message-count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    background: #4d47c3;
+    color: #fff;
+    margin: 0;
+    transition: all .2s ease-in-out;
+  }
+}
+.active {
+  background: #4d47c3;
+  color: #fff;
+  .user-room__message-count {
+    background: #fff;
+    color: #4d47c3;
+  }
+}
+@media screen and (max-width: 768px) {
+  .user-room {
+    width: 100px;
+  }
+}

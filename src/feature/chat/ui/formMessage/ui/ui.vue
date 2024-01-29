@@ -2,9 +2,12 @@
 import { UiButton } from "../../../../../shared/Ui/button";
 import { UiInput } from "../../../../../shared/Ui/input";
 import useController from "../../../../../entities/Chat/model/controllers/useController.ts";
+import { useChatStore } from "../../../../../shared/api/chat/useChatStore.ts";
 import moment from "moment";
-const { messages, userId, createNewMessage, message, options } =
+
+const {  userId, createNewMessage, message, options } =
   useController();
+const chat = useChatStore();
 </script>
 
 <template>
@@ -12,7 +15,7 @@ const { messages, userId, createNewMessage, message, options } =
     <div class="form-message__container">
       <div
         class="chat-message"
-        v-for="message in messages"
+        v-for="message in chat.messages"
         :key="message.id"
         :class="{ 'chat-message--not-personal': message.user_id != userId }"
       >
